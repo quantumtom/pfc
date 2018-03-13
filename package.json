@@ -1,17 +1,18 @@
 {
-  "name": "webpack-boilerplate",
-  "version": "3.0.0",
-  "description": "Plain webpack 3 Boilerplate with Babel, SASS and lodash on board",
-  "author": "Christoph von Gellhorn",
-  "license": "MIT",
-  "homepage": "https://github.com/cvgellhorn/webpack-boilerplate",
+  "name": "pfc",
+  "version": "1.0.1",
+  "description": "Custom script injection for RedBull.com project page.",
+  "author": "Tom Cornyn",
+  "license": "None",
+  "homepage": "https://github.com/quantumtom/pfc",
   "scripts": {
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --progress --config webpack.config.dev.js",
-    "build": "webpack -p --progress --config webpack.config.build.js"
+    "build": "webpack -p --progress --config webpack.config.build.js",
+    "start": "webpack-dev-server --hot --inline --open"
   },
   "repository": {
     "type": "git",
-    "url": "https://cvgellhorn@github.com/cvgellhorn/webpack-boilerplate.git"
+    "url": "https://github.com/quantumtom/pfc.git"
   },
   "dependencies": {
     "lodash": "^4.17.5"
@@ -25,6 +26,7 @@
     "css-loader": "^0.28.10",
     "ejs-loader": "^0.3.0",
     "file-loader": "^1.1.9",
+    "html-loader": "^0.5.5",
     "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
