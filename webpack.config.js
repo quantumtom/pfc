@@ -1,4 +1,6 @@
 const path = require('path');
+const exportPlugin = require('./exportPlugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -16,10 +18,15 @@ const appHtmlTitle = 'Webpack Boilerplate';
  */
 module.exports = {
     entry: {
-        vendor: [
-            'lodash'
-        ],
-        bundle: path.join(dirApp, 'index')
+        index: './app/index.js',
+        main: './app/main.js'
+    },
+    output: {
+        filename: '[name]-[hash].js',
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: 'https://addons.redbull.com/us/playingforchange/',
+        library: 'phasetwo',
+        libraryTarget: 'amd'
     },
     resolve: {
         modules: [
@@ -34,14 +41,15 @@ module.exports = {
         }),
 
         new webpack.ProvidePlugin({
-            // lodash
             '_': 'lodash'
         }),
 
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'index.ejs'),
             title: appHtmlTitle
-        })
+        }),
+        new exportPlugin(),
+        new CleanWebpackPlugin(['dist/*'])
     ],
     module: {
         rules: [
@@ -103,7 +111,29 @@ module.exports = {
                 options: {
                     name: '[path][name].[ext]'
                 }
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                use: [
+                    'file-loader'
+                ]
+            },
+            {
+                test: /\.html$/,
+                use: [{
+                    loader: 'html-loader',
+                    options: {
+                        minimize: true,
+                        removeComments: false,
+                        collapseWhitespace: true
+                    }
+                }],
             }
         ]
+    },
+    devServer: {
+        contentBase: path.join(__dirname, 'public'),
+        compress: true,
+        port: 9000
     }
 };
