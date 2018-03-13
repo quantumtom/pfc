@@ -8,16 +8,18 @@ module.exports = merge(webpackConfig, {
 
     devtool: 'cheap-module-source-map',
 
+    // plugins: [
+    //     new webpack.optimize.CommonsChunkPlugin({
+    //         names: ['index', 'main']
+    //     }),
+    //     new CleanWebpackPlugin(['dist'])
+    // ],
     output: {
-        path: path.join(__dirname, 'dist'),
-        filename: '[name].[chunkhash].js'
-    },
-
-    plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            names: ['vendor', 'manifest']
-        }),
-        new CleanWebpackPlugin(['dist'])
-    ]
+        filename: '[name]-[hash].js',
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: 'https://addons.redbull.com/us/playingforchange/',
+        library: 'pfc',
+        libraryTarget: 'amd'
+    }
 
 });
