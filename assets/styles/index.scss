@@ -7,3 +7,186 @@ html {
 *, *:before, *:after {
     box-sizing: inherit;
 }
+
+@font-face {
+    font-family: Kankin;
+    font-weight: bold;
+    src: url(../fonts/kankin.otf) format('opentype');
+}
+
+@font-face {
+    font-family: "Futura LT Condensed";
+    font-weight: bold;
+    src: url(../fonts/Futura-CondensedLight.otf) format('opentype');
+}
+
+.pfc-background-color {
+    background: #000000;
+    height: 100vh;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.pfc-background-texture {
+    background:  url(../images/texture.jpg) no-repeat top center/cover;
+    height: 100vh;
+    left: 0;
+    opacity: 0.4;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.pfc-content {
+    font-family: Kankin, sans-serif;
+    margin: auto;
+    padding: 0;
+    text-align: center;
+    width: 75%;
+}
+
+.pfc-text {
+    color: #316a88;
+    text-decoration: none;
+}
+
+.pfc-text-bg {
+    margin: auto;
+    width: 80%;
+}
+
+.pfc-top {
+    background:  url(../images/brush-blue.png) no-repeat top center/cover;
+    color: #f2f5e2;
+    padding: 20px;
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+    .pfc-head {
+        font-size: 30px;
+    }
+    .pfc-subhead {
+        font-size: 18px;
+    }
+    .pfc-lead {
+        font-size: 16px;
+    }
+    .inline-heading {
+        font-size: 28px;
+        padding: 7px;
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+    .pfc-head {
+        font-size: 56px;
+    }
+    .pfc-subhead {
+        font-size: 30px;
+    }
+    .pfc-lead {
+        font-size: 32px;
+    }
+    .inline-heading {
+        font-size: 40px;
+        padding: 10px;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    .pfc-head {
+        font-size: 66px;
+    }
+    .pfc-subhead {
+        font-size: 40px;
+    }
+    .pfc-lead {
+        font-size: 32px;
+    }
+    .inline-heading {
+        font-size: 40px;
+        padding: 10px;
+    }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+    .pfc-head {
+        font-size: 72px;
+    }
+    .pfc-subhead {
+        font-size: 50px;
+    }
+    .pfc-lead {
+        font-size: 32px;
+    }
+    .inline-heading {
+        font-size: 40px;
+        padding: 10px;
+    }
+}
+
+.inline-paragraph__text,
+.inline-paragraph__link {
+    margin: 40px 0 0 0;
+}
+
+.pfc-head {
+    color: #f2f5e2;
+    text-transform: uppercase;
+}
+
+.pfc-subhead {
+    color: #f2f5e2;
+}
+
+.pfc-lead {
+    color: #f2f5e2;
+    font-family: "Futura LT Condensed", sans-serif;
+    margin: 0;
+}
+
+.inline-paragraph {
+    text-align: center;
+}
+
+.inline-paragraph__text {
+    color: #f2f5e2;
+}
+
+a.inline-paragraph__link,
+a.inline-paragraph__link:visited {
+    color: #e7e426;
+}
+
+a.inline-paragraph__link:hover {
+    color: #b4b123;
+}
+
+.inline-heading {
+    background:  url(../images/brush-blue.png) no-repeat top center/cover;
+    color: #f2f5e2;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.caption-and-content-layout__caption-container {
+    padding-top: 15px;
+}
+
+.pfc-content,
+.inline-paragraph__text,
+.inline-paragraph__link,
+.inline-heading,
+.panel-caption__text {
+    font-family: "Futura LT Condensed", sans-serif;
+    position: relative;
+}
