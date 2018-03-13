@@ -11,7 +11,7 @@ const dirNode = 'node_modules';
 const dirApp = path.join(__dirname, 'app');
 const dirAssets = path.join(__dirname, 'assets');
 
-const appHtmlTitle = 'Webpack Boilerplate';
+const appHtmlTitle = 'PFC Custom Script';
 
 /**
  * Webpack Configuration
@@ -25,7 +25,7 @@ module.exports = {
         filename: '[name]-[hash].js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: 'https://addons.redbull.com/us/playingforchange/',
-        library: 'phasetwo',
+        library: 'pfc',
         libraryTarget: 'amd'
     },
     resolve: {
@@ -38,10 +38,6 @@ module.exports = {
     plugins: [
         new webpack.DefinePlugin({
             IS_DEV: IS_DEV
-        }),
-
-        new webpack.ProvidePlugin({
-            '_': 'lodash'
         }),
 
         new HtmlWebpackPlugin({
