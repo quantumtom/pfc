@@ -6,7 +6,7 @@
   "license": "None",
   "homepage": "https://github.com/quantumtom/pfc",
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev webpack-dev-server --progress --config webpack.config.dev.js",
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --open --progress --config webpack.config.dev.js",
     "build": "webpack -p --progress --config webpack.config.build.js",
     "start": "cross-env NODE_ENV=dev webpack-dev-server --hot --inline --open --progress --config webpack.config.dev.js"
   },
